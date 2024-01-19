@@ -1,0 +1,210 @@
+html{
+  min-height: 100%;
+}
+
+.videocontainer{
+    position: relative;
+    background-color: black;
+    height: 55vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  body { padding-top: 50px; }
+
+  
+  header video {
+    position: absolute;
+    z-index: 0;
+  }
+  
+  header .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  
+  .logo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    z-index: 3;
+  }
+  
+  .logo-img {
+    max-width: 100px;
+    max-height: 50px;
+  }
+
+  .navbar-container{
+    position:absolute;
+    z-index: 2;
+  }
+
+  .navbar-brand{
+    padding: 10px; 
+    margin-left: 16px;
+  }
+
+  .news-img-thumbnail-container {
+    position: relative;
+    width: 50%;
+    padding-top: 50%;
+    border-radius: 50%; 
+    overflow: hidden;
+  }
+  
+  .news-thumbnail-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease-in-out;
+    filter:brightness(70%);
+  }
+
+  .news-thumbnail-img:hover{
+    filter: brightness(90%);
+  }
+
+  .news-div {
+    /* cursor: pointer; */
+    padding: 0%;
+    margin-bottom: 10px;
+}
+
+.button-thumbnail {
+  margin: 10px;
+  background: #6c757d;
+  background-size: 300% 100%;
+  background-image: linear-gradient(
+    103.3deg,
+    rgba(128, 129, 128, 0.267) 30%,
+    rgb(131, 131, 131) 55.7%,
+    rgb(185, 185, 185) 81.8%
+  );
+  transition: background-position 300ms ease;
+}
+
+.button-thumbnail:hover {
+  background-position: 100% 0;
+}
+
+h4{
+  font-weight: normal;
+  font-size: x-large;
+}
+
+.news-thumbnail{
+  border: 1px solid #292929; 
+  background-color: #1f1f1d; 
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+body{
+  background-color: #161616;
+}
+
+.news-img-container
+{
+  position: relative;
+  width: 80%;
+  padding-top: 46.5%;
+  overflow: hidden;
+}
+
+/*Individual new */
+/*---------------*/
+.img-new-container {
+  max-height: 300px; /* Adjust the height as needed */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.img-new{
+  width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+/* Lista!! (news2) */
+/*----------*/
+
+.news2-thumbnail{
+  position:relative;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.news2-thumbnail-image-container{
+  position: relative;
+  width: 100%;
+  padding-top: 100%; 
+  overflow: hidden;
+}
+
+.news2-thumbnail-img {
+  border: 1px solid #666666;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100%;
+  object-fit: cover;
+  transition: filter 0.3s ease-in-out;
+  filter:brightness(55%);
+}
+
+.news2-thumbnail-img:hover{
+  filter: brightness(90%);
+  border: 1px solid #000000;
+}
+
+.news2-div {
+  /* cursor: pointer; */
+  padding: 0%;
+  margin-bottom: 10px;
+}
+
+
+
+.news2-thumbnail-title {
+  position: absolute;
+  bottom: 8%;
+  left: 5%;
+  width: 100%;
+  color: #fff; 
+  transition: color 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.news2-thumbnail-img:hover{
+  filter: brightness(90%);
+}
+
+.news2-thumbnail:hover .news2-thumbnail-title {
+  color: #0f0f0f;
+}
