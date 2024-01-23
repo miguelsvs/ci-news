@@ -3,6 +3,7 @@ html{
 }
 
 .videocontainer{
+    align-items: center;
     position: relative;
     background-color: black;
     height: 55vh;

@@ -54,24 +54,23 @@ class Auth extends BaseController
         }
         else {
 
+            auth()->logout();
+
             $credentials = [
                 'email'    => $this->request->getPost('email'),
                 'password' => $this->request->getPost('password')
             ];
 
-            $loginAttempt = auth()->attempt($credentials);
+            $loginAttempt = auth()->remember()->attempt($credentials);
 
             if (! $loginAttempt->isOK()) {
                 return redirect()->back()->with('error', $loginAttempt->reason());
             }
 
-            $result = auth()->attempt($credentials);
-
-            if ($result->isOK()) {
-                $user = $result->extraInfo();
+            if ($loginAttempt->isOK()) {
+                $user = $loginAttempt->extraInfo();
+                return redirect()->to("news/lista");
             }
-
-            $loginAttempt = auth()->remember()->attempt($credentials);
 
         }
 
@@ -168,7 +167,31 @@ class Auth extends BaseController
         if (auth()->loggedIn()) {
             auth()->logout();
         }        
+        return redirect()->to('news/lista');
     }
+
+    public function profile(){
+        $user = auth()->user();
+        if($user){
+            $user_lastname = "Not defined";
+            if(auth()->user()->lastname){$user_lastname = auth()->user()->lastname;};
+            $data = ["title" => "profile",
+                "user" => ["username" => auth()->user()->username,
+                "lastname" => $user_lastname,
+                "email" => auth()->user()->email],
+            ];
+
+            return view('templates/head', $data)
+            .view('templates/navbar')
+            . view('auth/profile')
+            . view('templates/footer'); 
+        }
+        else{
+            return redirect()->to("login");
+        }
+    }
+
+
 
 
 }

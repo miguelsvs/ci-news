@@ -17,4 +17,14 @@ class UserModel extends ShieldUserModel
             'lastname'
         ];
     }
+
+    public function getUser($id = false)
+    {
+        if ($id === false) {
+            return null;
+        }
+
+        return $this->where(['id' => $id])->first();
+
+    }
 }

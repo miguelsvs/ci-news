@@ -64,7 +64,8 @@ writable/debugbar/*
 !writable/debugbar/.gitkeep
 
 public/debugbar/*
-!writable/debugbar/.gitkeep
+
+public/session/*
 
 php_errors.log
 

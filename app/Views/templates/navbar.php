@@ -1,6 +1,5 @@
 </head>
 <body class="bg-gradient">  
-  
   <!-- Logo -->
   <div class="logo-container position-absolute top-0 start-0 mt-1 ms-1" >
       <img src="/ci-news/public/img/logo.png" alt="logo" class="logo-img">
@@ -30,6 +29,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/ci-news/register">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ci-news/profile">Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/ci-news/logout">Logout</a>

@@ -1,7 +1,7 @@
 <?php namespace Config;
 
-use App\Filters\AlreadyLoggedInFilter;
 use CodeIgniter\Config\BaseConfig;
+use app\Filters\AlreadyLoggedFilter;
 
 class Filters extends BaseConfig
 {
@@ -11,8 +11,7 @@ class Filters extends BaseConfig
       'csrf'     => \CodeIgniter\Filters\CSRF::class,
       'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
       'honeypot' => \CodeIgniter\Filters\Honeypot::class,
-      'AuthCheck' => AlreadyLoggedInFilter::class,
-      'AlreadyLoggedIn' => AlreadyLoggedInFilter::class,
+      'alreadyLogged' => AlreadyLoggedFilter::class
    ];
 
    // Always applied before every request
@@ -35,5 +34,18 @@ class Filters extends BaseConfig
    // List filter aliases and any before/after uri patterns
    // that they should run on, like:
    //    'isLoggedIn' => ['before' => ['account/*', 'profiles/*']],
-   public $filters = [];
+   public $filters = [
+
+      
+      
+      
+      /*    SI QUIERES CONFIGURAR AUTO-RATES
+      POR DEFECTO SON 10 POR MINUTO
+     ]
+     'auth-rates' => [
+         'limit' => 5,  // Number of requests allowed
+         'per'   => MINUTE,  // Time period (e.g., MINUTE, HOUR, DAY)
+         'group' => 'auth',  // Identifier for the rate limit group
+     ], */
+   ];
 }

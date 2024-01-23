@@ -6,12 +6,13 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 
-class AuthCheckFilter implements FilterInterface
+class AlreadyLoggedFilter implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(!session()->has('loggedUserId')) {
-            return redirect()->to('auth')->with('fail', "You need to login");
+        $user = auth()->user();
+        if($user) {
+            return redirect()->to("news/lista")->with('fail', "Already logged");
         }
     }
 
@@ -20,3 +21,6 @@ class AuthCheckFilter implements FilterInterface
         // Do something here
     }
 }
+
+
+
